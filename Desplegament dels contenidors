@@ -1,0 +1,10 @@
+deploy_containers() {
+  echo -e "${YELLOW}Iniciant contenidors...${NC}"
+  cd /opt/wordpress
+  docker-compose up -d
+
+  echo -e "${GREEN}Contenidors en marxa! Accedeix a:${NC}"
+  echo -e "URL: ${YELLOW}http://$(hostname -I | awk '{print $1}'):$WP_PORT${NC}"
+}
+
+deploy_containers
