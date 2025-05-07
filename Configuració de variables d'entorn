@@ -1,0 +1,19 @@
+setup_variables() {
+  echo -e "${YELLOW}Configuració inicial:${NC}"
+  read -p "Port per a WordPress (default: 8080): " WP_PORT
+  WP_PORT=${WP_PORT:-8080}
+
+  read -p "Contrasenya root de MySQL (default: rootpass): " DB_ROOT_PASSWORD
+  DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-rootpass}
+
+  read -p "Nom de la base de dades (default: wordpress): " DB_NAME
+  DB_NAME=${DB_NAME:-wordpress}
+
+  read -p "Usuari de MySQL (default: wpuser): " DB_USER
+  DB_USER=${DB_USER:-wpuser}
+
+  read -p "Contrasenya de l'usuari (default: wppass): " DB_PASSWORD
+  DB_PASSWORD=${DB_PASSWORD:-wppass}
+}
+
+setup_variables
