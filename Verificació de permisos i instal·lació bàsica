@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Comprovar si s'executa com a root
+if [ "$EUID" -ne 0 ]; then
+  echo -e "${RED}ERROR: Executa amb sudo o com a root.${NC}"
+  exit 1
+fi
+
+# Actualitzar paquets
+apt-get update
